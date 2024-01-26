@@ -24,7 +24,7 @@ class Producto:
         return self.__nombre
 
     @nombre.setter
-    def codigo(self, valor):
+    def nombre(self, valor):
         self.__nombre = valor
 
     @property
@@ -32,17 +32,24 @@ class Producto:
         return self.__precio
 
     @precio.setter
-    def codigo(self, valor):
+    def precio(self, valor):
         self.__precio = valor      
 
+    def calcular_total(self, cantidad):
+        """Funcion que introduciendo un número positivo nos devuelve ese número multiplicado por el precio que tiene.
+        Parámetro: cantidad = número positivo.
+        Salida: cantidad multiplicado por el precio."""
+        return self.precio * cantidad
+
+
     def __str__(self):
-        return 'Codigo: ' + str(self.__codigo) + 'nombre: ' 
-        + str(self.__nombre) + 'precio: ' + str(self.__precio)  
+        return ('Codigo: ' + str(self.__codigo) + 'nombre: ' 
+        + str(self.__nombre) + 'precio: ' + str(self.__precio)  )
 
-p1 = Producto(1, 'Producto 1' , 5)
-p2 = Producto(2, 'Producto 2' , 10)
-p3 = Producto(3, 'Producto 3' , 20)
+p1 = Producto(1, 'Producto 1 ' , 5)
+p2 = Producto(2, 'Producto 2 ' , 10)
+p3 = Producto(3, 'Producto 3 ' , 20)
 
-print(p1)
-print(p2)
-print(p3)
+print(p1.calcular_total(2))
+print(p2.calcular_total(2))
+print(p3.calcular_total(2))
